@@ -62,6 +62,15 @@ section#page-1 {
   background: linear-gradient(to right, #222831, #2d4059, #222831);
   background-size: 200%;
   overflow: hidden;
+  margin-bottom: 2px;
+  height: 100vh;
+}
+
+section#page-2 {
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(to right, #222831, #2d4059, #222831);
+  background-size: 200%;
+  overflow: hidden;
   /* margin-bottom: 1em; */
   height: 100vh;
 }
@@ -73,6 +82,17 @@ section#page-1 .grid {
   width: 70vw;
   height: 100vh;
   margin-top: 10vh;
+  margin-left: 15vw;
+  z-index: 1;
+}
+
+section#page-2 .grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  width: 70vw;
+  height: 100vh;
+  margin-top: 8vh;
   margin-left: 15vw;
   z-index: 1;
 }
@@ -109,6 +129,19 @@ section#page-1 .grid {
   justify-self: center;
 }
 
+.p2-e1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  justify-self: center;
+  vertical-align: top;
+}
+
+.p2-e3 {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  justify-self: center;
+}
+
 .profile-picture {
   height: 15vw;
   border-radius: 50%;
@@ -132,7 +165,7 @@ section#page-1 .grid {
   }
 }
 
-#arrow {
+.arrow-down {
   position: relative;
   opacity: 0.8;
   rotate: 180deg;
@@ -140,20 +173,45 @@ section#page-1 .grid {
   margin-bottom: 18vh;
   width: 5vh;
   cursor: pointer;
-  animation: arrowBounce 2s infinite;
+  animation: arrowBounceDown 2s infinite;
 }
 
-#arrow:hover {
+.arrow-down:hover {
+  opacity: 0.5;
+}
+
+.arrow-up {
+  position: relative;
+  opacity: 0.8;
+  align-self: flex-start;
+  width: 5vh;
+  cursor: pointer;
+  animation: arrowBounceUp 2s infinite;
+}
+
+.arrow-up:hover {
   opacity: 0.5;
 }
 
 /* CSS animation for the arrow */
-@keyframes arrowBounce {
+@keyframes arrowBounceDown {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-50%);
+    transform: translateY(-40%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowBounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40%);
   }
   100% {
     transform: translateY(0);
