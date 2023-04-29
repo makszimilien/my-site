@@ -5,19 +5,22 @@
 window.addEventListener("load", function () {
   setTimeout(function () {
     document.querySelector(".overlay").classList.add("hidden");
-  }, 1800); // 3000ms = 3 seconds
+  }, 1000); // 3000ms = 3 seconds
 });
 
-// add even listener to element that has the class class="arrow-down" and when clicked, run the function
-// document
-//   .querySelectorAll(".arrow-down")
-//   .split(",")
-//   .map((element) =>
-//     element.addEventListener("click", function () {
-//       console.log(this.classList);
-//     })
-//   );
-// console.log(typeof document.querySelectorAll(".arrow-down"));
-// document.querySelectorAll(".arrow-down").map((element) => {
-//   console.log(element.parentElement);
-// });
+document.querySelectorAll(".arrow-down, .arrow-up").forEach((element) =>
+  element.addEventListener("click", function () {
+    // console.log(this.parentElement.classList.value, this.classList.value);
+    const currentPage = Number(
+      this.parentNode.parentNode.parentNode.getAttribute("id").match(/\d+/)[0]
+    );
+    console.log(currentPage);
+    this.classList.value === "arrow-down"
+      ? document
+          .querySelector(`#page-${currentPage + 1}`)
+          .scrollIntoView({ behavior: "smooth" })
+      : document
+          .querySelector(`#page-${currentPage - 1}`)
+          .scrollIntoView({ behavior: "smooth" });
+  })
+);
