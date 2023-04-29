@@ -12,41 +12,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <script src="script.js"></script>
+  <!-- Overlay -->
   <div class="overlay">
     <div class="overlay-content">
       <h1>Hi!</h1>
     </div>
   </div>
-  <div class="grid-container">
-    <div class="grid-item">
-      <img class="profile-picture" src="img/profile.png" alt="profile picture">
+  <!-- First page - Introduction -->
+  <section id=page-1>
+    <!-- Grid conatiner -->
+    <div class="grid">
+      <!-- Grid element 1 -->
+      <div class="box p1-e1">
+        <img class="profile-picture" src="img/profile.png" alt="profile picture">
+      </div>
+      <!-- Grid element 2 -->
+      <div class="box p1-e2">
+        <h1>My name is Tamás.</h1>
+      </div>
+      <!-- Grid element 3 -->
+      <div class="box p1-e3">
+        <p>
+          I am a committed electrical engineer with 10+ years of experience. My expertise in team management allows me to motivate and mentor diverse groups of individuals, while also leading by example as an individual contributor. My experience has enabled me to use my technical skills to foster effective collaboration between engineering and crucial business functions.
+        </p>
+      </div>
+      <div class="box p1-e4">
+        <!-- Arrow -->
+        <div id="arrow"></div>
+      </div>
     </div>
-    <div class="grid-item">
-      <h1>My name is Tamás.</h1>
-    </div>
-    <div class="grid-item grid-full-row">
-      <p>
-        I am a committed electrical engineer with 10+ years of experience. My expertise in team management allows me to motivate and mentor diverse groups of individuals, while also leading by example as an individual contributor. My experience has enabled me to use my technical skills to foster effective collaboration between engineering and crucial business functions.
-      </p>
-    </div>
-    <div id="arrow"></div>div>
-  </div>
+  </section>
 
-  <div class="grid-container">
-    <div class="grid-item">
-      <img class="profile-picture" src="img/profile.png" alt="profile picture">
-    </div>
-    <div class="grid-item">
-      <h1>My name is Tamás.</h1>
-    </div>
-    <div class="grid-item grid-full-row">
-      <p>
-        I am a committed electrical engineer with 10+ years of experience. My expertise in team management allows me to motivate and mentor diverse groups of individuals, while also leading by example as an individual contributor. My experience has enabled me to use my technical skills to foster effective collaboration between engineering and crucial business functions.
-      </p>
-    </div>
-    </div>
-  </div>
-  
+<!-- Scripts -->
+<script src="script.js"></script>
 </body>
 </html>

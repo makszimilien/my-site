@@ -10,13 +10,22 @@
 }
 
 body {
-  animation: background-pan 10s linear infinite;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to right, #222831, #2d4059, #222831);
-  background-size: 200%;
-  overflow: hidden;
-  margin: 0px;
   color: #fff;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 4vw;
+  /* max-width: 100%; */
+  font-weight: 200;
+}
+
+p {
+  font-size: 2vw;
+  font-weight: 300;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .overlay {
@@ -48,47 +57,56 @@ body {
   font-weight: 500;
 }
 
-.grid-container {
+section#page-1 {
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(to right, #222831, #2d4059, #222831);
+  background-size: 200%;
+  overflow: hidden;
+  /* margin-bottom: 1em; */
+  height: 100vh;
+}
+
+section#page-1 .grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
   width: 70vw;
-  /* height: 80vh; */
-  justify-content: center;
-  vertical-align: center;
-  align-items: center;
+  height: 100vh;
   margin-top: 10vh;
   margin-left: 15vw;
   z-index: 1;
 }
 
-/* .grid-item {
-  background-color: #eee;
-  padding: 10px;
+.box {
+  vertical-align: flex-start;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
 }
-*/
-.grid-item:nth-child(1) {
+
+.p1-e1 {
   grid-row: 1;
   grid-column: 1;
   margin-left: 3vw;
 }
-.grid-item:nth-child(2) {
+.p1-e2 {
   grid-row: 1;
   grid-column: 2;
   margin-left: 3vw;
 }
-.grid-item:nth-child(3) {
+.p1-e3 {
   grid-column: 1 / span 2;
-  grid-row: 2 / span 3;
+  grid-row: 2;
   align-self: start;
-  margin-top: 10vh;
 }
 
-.grid-item:nth-child(4) {
-  grid-column: 2;
-  grid-row: 4;
-  align-self: start;
-  margin-top: 10vh;
+.p1-e4 {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  align-self: flex-end;
 }
 
 .profile-picture {
@@ -98,21 +116,8 @@ body {
   box-shadow: 0 0 5px 5px #222831;
 }
 
-h1 {
-  font-size: 4vw;
-  /* max-width: 100%; */
-  font-weight: 200;
-}
-
-p {
-  font-size: 2vw;
-  font-weight: 300;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
 @media (max-width: 768px) {
-  .grid-container {
+  .grid {
     width: 95vw;
     margin-top: 5vh;
     margin-left: 2vw;
@@ -129,7 +134,6 @@ p {
 
 #arrow {
   position: absolute;
-  bottom: 20px;
   left: 50%;
   rotate: 180deg;
   margin-left: -20px;
@@ -155,12 +159,12 @@ p {
 /* CSS animation for the arrow */
 @keyframes arrowBounce {
   0% {
-    bottom: 20px;
-  }
-  50% {
     bottom: 40px;
   }
+  50% {
+    bottom: 60px;
+  }
   100% {
-    bottom: 20px;
+    bottom: 40px;
   }
 }
